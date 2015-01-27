@@ -19,18 +19,10 @@
     <ul class="list-group">
         <li class="list-group-item">
             <h1>The BEST GPA Calculator</h1>
-            <form ng-submit="addData()">
-                <input ng-model="textField" type="text" size="20" placeholder="Class 1 Name">
-                <input ng-model="textField" type="text" size="20" placeholder="Letter Grade Earned">
-                <input ng-model="textField" type="text" size="20" placeholder="Number of Credits">
-                <br />
-                <input ng-model="textField" type="text" size="20" placeholder="Class 2 Name">
-                <input ng-model="textField" type="text" size="20" placeholder="Letter Grade Earned">
-                <input ng-model="textField" type="text" size="20" placeholder="Number of Credits">
-                <br />
-                <input ng-model="textField" type="text" size="20" placeholder="Class 3 Name">
-                <input ng-model="textField" type="text" size="20" placeholder="Letter Grade Earned">
-                <input ng-model="textField" type="text" size="20" placeholder="Number of Credits">
+            <form ng-submit="addClass()">
+                <input ng-model="classField" type="text" size="20" placeholder="Class Name">
+                <input ng-model="gradeField" ng-maxlength="1" type="text" size="17" placeholder="Letter Grade Earned">
+                <input ng-model="creditField" type="number" size="10" placeholder="Number of Credits">
                 <br />
                 <br />
                 <input type="submit" value="submit" class="btn btn-primary">
@@ -38,6 +30,7 @@
             </form>
 
         </li>
+        <li class="list-group-item" ng-repeat="test in data">{{test.text}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
     </ul>
 </div>
 </body>
