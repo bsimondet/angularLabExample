@@ -24,7 +24,8 @@ var mainApp = angular.module("mainApp", []);
            {text: "kittens"},
            {text: "snake"},
            {text: "badger"},
-           {text: "puppies"}
+           {text: "puppies"},
+           {text: "sea cucumber"}
        ];
 
        $scope.addData = function(){
