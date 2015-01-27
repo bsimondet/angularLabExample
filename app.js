@@ -41,6 +41,10 @@ app.get('/about', function(req, res){
     res.sendFile('public/views/about.html', options);
 });
 
+app.get('/gpaCalculator', function(req, res){
+    res.sendFile('public/views/gpaCalculator.html', options);
+});
+
 app.get('/', function(req, res){
     res.sendFile('public/views/index.html', options);
 });

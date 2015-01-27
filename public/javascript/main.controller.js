@@ -8,9 +8,22 @@ var mainApp = angular.module("mainApp", []);
             {text: "Home", link: '/'},
             {text: "About", link: '/about'},
             {text: "Kittens", link: '/kittens'},
-            {text: "404 Page", link: '/wefwrtbertbeb'}
+            {text: "404 Page", link: '/wefwrtbertbeb'},
+            {text: "GPA Calculator", link: '/gpaCalculator'}
         ];
     });
+
+
+//==================== GPA CONTROLLER ====================================
+
+
+
+
+
+
+
+
+
 
 //==================== MAIN CONTROLLER ==================================
     mainApp.controller('mainCtrl', function($scope){
