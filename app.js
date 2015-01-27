@@ -20,6 +20,7 @@ app.use(express.static('bower_components'));
 
 // Defining routes!
 
+
 // When your browser wants a page from a site, it will generally send an HTTP "get" request for it. (literally, asking the web server for the specific page or file).
 // For instance, say your website is 'www.pets.net' and someone types 'www.pets.net/kittens' into their browser.
 // To our server, this will look like a request for '/kittens', and we need to define how we want it to respond.
