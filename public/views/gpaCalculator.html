@@ -12,12 +12,12 @@
     <script type="text/javascript" src="angularjs/angular.js"></script>
     <script type="text/javascript" src="javascript/main.controller.js"></script>
 </head>
-<body ng-app="mainApp">
+<body ng-app="mainApp" ng-controller="mainCtrl">
 <div ng-include="'views/navbar.html'"></div>
 <hr>
 <div class="container">
     <ul class="list-group">
-        <li class="list-group-item">
+        <li class="list-group-item" ng-app="mainApp" ng-controller="gpaCtrl">
             <h1>The BEST GPA Calculator</h1>
             <form ng-submit="addClass()">
                 <input ng-model="classField" type="text" size="20" placeholder="Class Name">

@@ -44,13 +44,6 @@ var mainApp = angular.module("mainApp", []);
     });
 
 
-
-
-
-
-
-
-
 //==================== MAIN CONTROLLER ==================================
     mainApp.controller('mainCtrl', function($scope){
        console.log("controller loaded!");
