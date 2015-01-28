@@ -14,6 +14,7 @@ var mainApp = angular.module("mainApp", []);
     });
 
 
+
 //==================== GPA CONTROLLER ====================================
     mainApp.controller('gpaCtrl', function($scope){
         $scope.classField = "";
