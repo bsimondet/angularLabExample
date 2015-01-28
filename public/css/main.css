@@ -23,3 +23,7 @@ img {
 .floatRight {
     float: right;
 }
+
+.lists {
+    zoom:1; *display: inline; _height: 30px;
+}
