@@ -22,34 +22,55 @@ var mainApp = angular.module("mainApp", []);
 
         $scope.creditField = "";
 
-        $scope.data = [
-            {class: Example, grade: "A", credits: "0"}
+        $scope.classes = [
+            {class:"Classes Entered"}
         ];
 
+        var totalCredits = 0;
+        var totalGradePoint = 0;
+        var currentGpa = 0;
+
         $scope.addClass = function(){
-            if($scope.classField.length >= 1 && $scope.gradeField == 1) {
-                $scope.data.push({class: $scope.classField, grade: $scope.gradeField, credits: $scope.creditField});
+            if($scope.classField.length >= 1) {
+                $scope.classes.push({class: $scope.classField});
+                totalCredits = totalCredits + parseInt($scope.creditField);
+                totalGradePoint = totalGradePoint + (parseInt($scope.creditField) * parseInt(returnGradeValue($scope.gradeField)));
+                currentGpa = totalGradePoint/totalCredits;
                 $scope.classField = "";
                 $scope.gradeField = "";
                 $scope.creditField = "";
             }
         };
-        $scope.removeData = function(index){
-            $scope.data.splice(index, 1);
+
+        $scope.currentGpa = function(){
+            return currentGpa.toFixed(3);
         };
 
         $scope.classesInList = function(){
-            return $scope.data.length;
+            return $scope.classes.length - 1;
         };
+
+        $scope.totalCredits = function(){
+            return totalCredits;
+        };
+
+        var returnGradeValue = function(str){
+            if (str === "A") {
+                return 4.0;
+            } else if (str === "B") {
+                return 3.0;
+            } else if (str === "C") {
+                return 2.0;
+            } else if (str === "D") {
+                return 1.0;
+            } else if (str === "F") {
+                return 0;
+            } else {
+                return 0;
+            }
+        };
+
     });
-
-
-
-
-
-
-
-
 
 //==================== MAIN CONTROLLER ==================================
     mainApp.controller('mainCtrl', function($scope){
