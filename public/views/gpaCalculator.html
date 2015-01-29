@@ -22,11 +22,11 @@
             <form ng-submit="addClass()">
                 <input ng-model="classField" type="text" size="20" placeholder="Class Name">
                 <input ng-model="gradeField" ng-maxlength="1" type="text" size="17" placeholder="Letter Grade Earned">
-                <input ng-model="creditField" type="number" size="10" placeholder="Number of Credits">
+                <input ng-model="creditField" type="text" size="20" placeholder="Number of Credits">
                 <span class="floatRight">Classes in this calculator: {{classesInList()}}</span>
                 <br />
                 <br />
-                <span class="floatRight" color = "coloringGPA(currentGpa)" >Total GPA: {{currentGpa()}}</span>
+                <span class="floatRight" id="GpaColor" >Total GPA: {{currentGpa()}}</span>
                 <input type="submit" value="submit" class="btn btn-primary"/>
                 <br />
             </form>

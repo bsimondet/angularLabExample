@@ -16,7 +16,6 @@ var mainApp = angular.module("mainApp", []);
 
 //TODO
 //-add color coorespoding to the GPA (red for below 2.0, yellow for 2.0-3.0, green for 3.0+
-//-add data validation w/ warning messages
 //-add remove function
 //-know how angular actually works
 //==================== GPA CONTROLLER ====================================
@@ -40,11 +39,19 @@ var mainApp = angular.module("mainApp", []);
         var totalGradePoint = 0;
 
         $scope.addClass = function(){
-            if($scope.classField.length >= 1) {
+            if(!$scope.classField.length >=1){
+                incorrectClassAlert();
+            } else if(!$scope.gradeField.length == 1){
+                incorrectGradeAlert();
+            } else if(!$scope.creditField.length == 1){
+                incorrectCreditAlert();
+            } else if(isNaN($scope.creditField)){
+                incorrectCreditAlert();
+            } else {
                 $scope.classes.push({class: $scope.classField});
                 $scope.grades.push({grade: $scope.gradeField});
                 totalCredits = totalCredits + parseInt($scope.creditField);
-                totalGradePoint = totalGradePoint + (parseInt($scope.creditField) * parseInt(returnGradeValue($scope.gradeField)));
+                totalGradePoint = totalGradePoint + (parseInt($scope.creditField) * parseInt(returnGradeValue($scope.gradeField.toUpperCase())));
                 currentGpa = totalGradePoint/totalCredits;
                 $scope.classField = "";
                 $scope.gradeField = "";

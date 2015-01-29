@@ -20,7 +20,12 @@ var incorrectCreditAlert = function(){
     alert("Please submit a valid number of credits.")
 };
 
-window.coloringGPA = function(currentGPA){
+var addColorClass = function(ele,cls){
+    ele.changingColor += " " + cls;
+};
+
+
+var coloringGPA = function(currentGPA){
     var calledColor;
     if(currentGPA < 2){
         calledColor = "red";
@@ -29,7 +34,7 @@ window.coloringGPA = function(currentGPA){
     } else if(currentGPA > 3){
         calledColor = "green";
     }
-    return calledColor;
+    addColorClass(calledColor,gpaColor);
 };
 /**
  * Used for getting the length of a string. For example only, you won't likely need to use something like this...
