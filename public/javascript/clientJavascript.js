@@ -8,6 +8,21 @@ var sendAlert = function(){
     alert("THIS IS AN ALERT!");
 };
 
+var incorrectClassAlert = function(){
+    alert("Please submit a class name.")
+};
+
+var incorrectGradeAlert = function(){
+    alert("Please submit a letter grade without a plus or minus.")
+};
+
+var incorrectCreditAlert = function(){
+    alert("Please submit a valid number of credits.")
+};
+
+//var coloringGPA = function(){
+
+//};
 /**
  * Used for getting the length of a string. For example only, you won't likely need to use something like this...
  * DIFFERENT FROM THE stringLength function in the server side javascript!!!
