@@ -30,10 +30,6 @@ var mainApp = angular.module("mainApp", []);
             {class:"Classes Entered"}
         ];
 
-        $scope.grades = [
-            {grade:"Grade Entered"}
-        ];
-
         var currentGpa = 0;
         var totalCredits = 0;
         var totalGradePoint = 0;
@@ -49,7 +45,6 @@ var mainApp = angular.module("mainApp", []);
                 incorrectCreditAlert();
             } else {
                 $scope.classes.push({class: $scope.classField});
-                $scope.grades.push({grade: $scope.gradeField});
                 totalCredits = totalCredits + parseInt($scope.creditField);
                 totalGradePoint = totalGradePoint + (parseInt($scope.creditField) * parseInt(returnGradeValue($scope.gradeField.toUpperCase())));
                 currentGpa = totalGradePoint/totalCredits;
@@ -86,7 +81,6 @@ var mainApp = angular.module("mainApp", []);
         };
 
         $scope.removeClasses = function(index){
-            console.log("GOT HERE");
             $scope.class.splice(index,1);
         };
 
