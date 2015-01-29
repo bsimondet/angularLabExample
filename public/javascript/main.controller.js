@@ -63,27 +63,13 @@ var mainApp = angular.module("mainApp", []);
         var returnGradeValue = function(str){
             if (str === "A") {
                 return 4.0;
-            } else if (str === "A-") {
-                return 3.667;
-            } else if (str === "B+") {
-                return 3.33;
             } else if (str === "B") {
                 return 3.0;
-            } else if (str === "B-") {
-                return 2.667;
-            }else if (str === "C+") {
-                return 2.33;
             } else if (str === "C") {
                 return 2.0;
-            } else if (str === "C-") {
-                return 1.667;
-            } else if (str === "D+") {
-                return 1.33;
             } else if (str === "D") {
                 return 1.00;
-            } else if (str === "D-") {
-                return 0.667;
-            }else {
+            } else {
                 return 0;
             }
         };
@@ -103,7 +89,8 @@ var mainApp = angular.module("mainApp", []);
            {text: "snake"},
            {text: "badger"},
            {text: "puppies"},
-           {text: "sea cucumber"}
+           {text: "sea cucumber"},
+           {text: "axolotl"}
        ];
 
        $scope.addData = function(){
