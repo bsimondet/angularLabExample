@@ -20,9 +20,17 @@ var incorrectCreditAlert = function(){
     alert("Please submit a valid number of credits.")
 };
 
-//var coloringGPA = function(){
-
-//};
+window.coloringGPA = function(currentGPA){
+    var calledColor;
+    if(currentGPA < 2){
+        calledColor = "red";
+    } else if (currentGPA >= 2 && currentGPA <= 3){
+        calledColor = "greenyellow";
+    } else if(currentGPA > 3){
+        calledColor = "green";
+    }
+    return calledColor;
+};
 /**
  * Used for getting the length of a string. For example only, you won't likely need to use something like this...
  * DIFFERENT FROM THE stringLength function in the server side javascript!!!

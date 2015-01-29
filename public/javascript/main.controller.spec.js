@@ -64,3 +64,23 @@ describe('Testing controller: navbarCtrl', function(){
       expect(scope.pages.length > 0).toEqual(true);
     });
 });
+//========Testing GPA Controller==================================
+
+describe('Testing controller: gpaCtrl', function(){
+    beforeEach(module('mainApp'));
+
+
+    var gpaCtrl, scope;
+
+    beforeEach(inject(function($controller, $rootScope) {
+        scope = $rootScope.$new();
+        gpaCtrl = $controller('gpaCtrl', {
+            $scope: scope
+        });
+    }));
+
+    it('should contain classes', function(){
+        expect(scope.classes.length > 0).toEqual(true);
+    });
+
+})
