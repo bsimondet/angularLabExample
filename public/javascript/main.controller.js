@@ -85,6 +85,11 @@ var mainApp = angular.module("mainApp", []);
             }
         };
 
+        $scope.removeClasses = function(index){
+            console.log("GOT HERE");
+            $scope.class.splice(index,1);
+        };
+
     });
 
 //==================== MAIN CONTROLLER ==================================
