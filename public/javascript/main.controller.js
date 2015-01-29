@@ -14,7 +14,10 @@ var mainApp = angular.module("mainApp", []);
     });
 
 
-
+//TODO
+//-add color coorespoding to the GPA (red for below 2.0, yellow for 2.0-3.0, green for 3.0+
+//-add data validation w/ warning messages
+//-know how angular actually works
 //==================== GPA CONTROLLER ====================================
     mainApp.controller('gpaCtrl', function($scope){
         $scope.classField = "";
