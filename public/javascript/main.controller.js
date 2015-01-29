@@ -31,9 +31,9 @@ var mainApp = angular.module("mainApp", []);
             {grade:"Grade Entered"}
         ];
 
+        var currentGpa = 0;
         var totalCredits = 0;
         var totalGradePoint = 0;
-        var currentGpa = 0;
 
         $scope.addClass = function(){
             if($scope.classField.length >= 1) {
@@ -63,15 +63,27 @@ var mainApp = angular.module("mainApp", []);
         var returnGradeValue = function(str){
             if (str === "A") {
                 return 4.0;
+            } else if (str === "A-") {
+                return 3.667;
+            } else if (str === "B+") {
+                return 3.33;
             } else if (str === "B") {
                 return 3.0;
+            } else if (str === "B-") {
+                return 2.667;
+            }else if (str === "C+") {
+                return 2.33;
             } else if (str === "C") {
                 return 2.0;
+            } else if (str === "C-") {
+                return 1.667;
+            } else if (str === "D+") {
+                return 1.33;
             } else if (str === "D") {
-                return 1.0;
-            } else if (str === "F") {
-                return 0;
-            } else {
+                return 1.00;
+            } else if (str === "D-") {
+                return 0.667;
+            }else {
                 return 0;
             }
         };
