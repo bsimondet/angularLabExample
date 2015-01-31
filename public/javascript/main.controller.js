@@ -73,6 +73,7 @@ var mainApp = angular.module("mainApp", []);
             }
         };
 
+        //Removes class from table as well as updating global variables that affect the displayed GPA
         $scope.removeClasses = function(index){
             var gradeToRemove = $scope.returnGradeValue(index.grade);
             var creditsToRemove = $scope.classes[index].credits;
@@ -82,6 +83,7 @@ var mainApp = angular.module("mainApp", []);
             $scope.classes.splice(index,1);
         };
 
+        //Returns the name of a class that is dependant upon the quality of GPA
         $scope.returnGpaColor = function(current){
             console.log("test");
             if(current >= 3){

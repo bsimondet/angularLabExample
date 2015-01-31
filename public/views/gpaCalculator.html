@@ -19,6 +19,7 @@
     <ul class="list-group">
         <li class="list-group-item" ng-app="mainApp">
             <h1>The BEST GPA Calculator</h1>
+            <!-- Input area -->
             <form ng-submit="addClass()">
                 <input ng-model="classField" type="text" size="20" placeholder="Class Name">
                 <input ng-model="gradeField" ng-maxlength="1" type="text" size="17" placeholder="Letter Grade Earned">
@@ -32,7 +33,7 @@
             </form>
 
         </li>
-
+        <!--Table underneath input area that displays all classes added with the option of removing them -->
         <li class="list-group-item" ng-repeat="test in classes">Class: {{test.class}}............................Grade: {{test.grade}}............................Credits: {{test.credits}}<span class="glyphicon glyphicon-remove floatRight" style="color: red"  ng-click="removeClasses($index)"></span></li>
     </ul>
 </div>
