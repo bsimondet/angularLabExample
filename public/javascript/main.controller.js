@@ -15,9 +15,7 @@ var mainApp = angular.module("mainApp", []);
 
 
 //TODO
-//-add color coorespoding to the GPA (red for below 2.0, yellow for 2.0-3.0, green for 3.0+
 //-add remove function
-//-know how angular actually works
 //==================== GPA CONTROLLER ====================================
     mainApp.controller('gpaCtrl', function($scope){
         $scope.classField = "";
@@ -26,8 +24,8 @@ var mainApp = angular.module("mainApp", []);
 
         $scope.creditField = "";
 
-        $scope.classes = [
-            {class:"Classes Entered"}
+        $scope.classes =[
+            {class: "Class Taken", grade: "Grade Given", credits: "Credits Assigned"}
         ];
 
         var currentGpa = 0;
@@ -44,9 +42,9 @@ var mainApp = angular.module("mainApp", []);
             } else if(isNaN($scope.creditField)){
                 incorrectCreditAlert();
             } else {
-                $scope.classes.push({class: $scope.classField});
+                $scope.classes.push({class:$scope.classField, grade:$scope.gradeField, credits:$scope.creditField});
                 totalCredits = totalCredits + parseInt($scope.creditField);
-                totalGradePoint = totalGradePoint + (parseInt($scope.creditField) * parseInt(returnGradeValue($scope.gradeField.toUpperCase())));
+                totalGradePoint = totalGradePoint + (parseInt($scope.creditField) * parseInt($scope.returnGradeValue($scope.gradeField.toUpperCase())));
                 currentGpa = totalGradePoint/totalCredits;
                 $scope.classField = "";
                 $scope.gradeField = "";
@@ -66,7 +64,7 @@ var mainApp = angular.module("mainApp", []);
             return totalCredits;
         };
 
-        var returnGradeValue = function(str){
+        $scope.returnGradeValue = function(str){
             if (str === "A") {
                 return 4.0;
             } else if (str === "B") {
@@ -81,7 +79,12 @@ var mainApp = angular.module("mainApp", []);
         };
 
         $scope.removeClasses = function(index){
-            $scope.class.splice(index,1);
+            var gradeToRemove = $scope.returnGradeValue(classes[index].grade);
+            var creditsToRemove = $scope.classes[index].credits;
+            var gradePointToRemove = gradeToRemove * creditsToRemove;
+            totalGradePoint = totalGradePoint - gradePointToRemove;
+            totalCredits = totalCredits - creditsToRemove;
+            $scope.classes.splice(index,1);
         };
 
         $scope.returnGpaColor = function(current){
