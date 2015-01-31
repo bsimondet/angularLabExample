@@ -13,9 +13,6 @@ var mainApp = angular.module("mainApp", []);
         ];
     });
 
-
-//TODO
-//-add remove function
 //==================== GPA CONTROLLER ====================================
     mainApp.controller('gpaCtrl', function($scope){
         $scope.classField = "";
@@ -24,9 +21,7 @@ var mainApp = angular.module("mainApp", []);
 
         $scope.creditField = "";
 
-        $scope.classes =[
-            {class: "Class Taken", grade: "Grade Given", credits: "Credits Assigned"}
-        ];
+        $scope.classes =[];
 
         var currentGpa = 0;
         var totalCredits = 0;
@@ -57,7 +52,7 @@ var mainApp = angular.module("mainApp", []);
         };
 
         $scope.classesInList = function(){
-            return $scope.classes.length - 1;
+            return $scope.classes.length;
         };
 
         $scope.totalCredits = function(){
@@ -79,7 +74,7 @@ var mainApp = angular.module("mainApp", []);
         };
 
         $scope.removeClasses = function(index){
-            var gradeToRemove = $scope.returnGradeValue(classes[index].grade);
+            var gradeToRemove = $scope.returnGradeValue(index.grade);
             var creditsToRemove = $scope.classes[index].credits;
             var gradePointToRemove = gradeToRemove * creditsToRemove;
             totalGradePoint = totalGradePoint - gradePointToRemove;
