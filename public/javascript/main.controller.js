@@ -40,7 +40,6 @@ var mainApp = angular.module("mainApp", []);
                 $scope.classes.push({class:$scope.classField, grade:$scope.gradeField, credits:$scope.creditField});
                 totalCredits = totalCredits + parseInt($scope.creditField);
                 totalGradePoint = totalGradePoint + (parseInt($scope.creditField) * parseInt($scope.returnGradeValue($scope.gradeField.toUpperCase())));
-                currentGpa = totalGradePoint/totalCredits;
                 $scope.classField = "";
                 $scope.gradeField = "";
                 $scope.creditField = "";
@@ -48,7 +47,7 @@ var mainApp = angular.module("mainApp", []);
         };
 
         $scope.currentGpa = function(){
-            return currentGpa.toFixed(3);
+            return (totalGradePoint/totalCredits).toFixed(3);
         };
 
         $scope.classesInList = function(){
@@ -75,17 +74,15 @@ var mainApp = angular.module("mainApp", []);
 
         //Removes class from table as well as updating global variables that affect the displayed GPA
         $scope.removeClasses = function(index){
-            var gradeToRemove = $scope.returnGradeValue(index.grade);
+            var gradeToRemove = $scope.returnGradeValue($scope.classes[index].grade);
             var creditsToRemove = $scope.classes[index].credits;
-            var gradePointToRemove = gradeToRemove * creditsToRemove;
-            totalGradePoint = totalGradePoint - gradePointToRemove;
-            totalCredits = totalCredits - creditsToRemove;
+            totalGradePoint -= (gradeToRemove * creditsToRemove);
+            totalCredits -= creditsToRemove;
             $scope.classes.splice(index,1);
         };
 
         //Returns the name of a class that is dependant upon the quality of GPA
         $scope.returnGpaColor = function(current){
-            console.log("test");
             if(current >= 3){
                 return "goodGrade";
             } else if (current > 2 && current < 3){
