@@ -83,4 +83,8 @@ describe('Testing controller: gpaCtrl', function(){
         expect(scope.classes.length > 0).toEqual(true);
     });
 
-})
+    it('should return badGrade', function(){
+        expect(scope.returnGpaColor(0)).toBe("badGrade");
+    });
+
+});

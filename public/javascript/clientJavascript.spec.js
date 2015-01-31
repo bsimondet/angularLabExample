@@ -9,8 +9,5 @@ describe('testing basic functions', function(){
         expect(returnKittens()).toBe("kittens");
     });
 
-    it('should return green', function(){
-       expect(coloringGPA(3.6)).toBe("green");
-    });
 });
 

@@ -84,6 +84,16 @@ var mainApp = angular.module("mainApp", []);
             $scope.class.splice(index,1);
         };
 
+        $scope.returnGpaColor = function(current){
+            console.log("test");
+            if(current >= 3){
+                return "goodGrade";
+            } else if (current > 2 && current < 3){
+                return "okGrade";
+            } else if (current <= 2) {
+                return "badGrade";
+            }
+        }
     });
 
 //==================== MAIN CONTROLLER ==================================

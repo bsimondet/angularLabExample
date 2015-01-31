@@ -27,3 +27,15 @@ img {
 .lists {
     zoom:1; *display: inline; _height: 30px;
 }
+
+.goodGrade {
+    color: green;
+}
+
+.okGrade {
+    color: #ffff00;
+}
+
+.badGrade {
+    color: red;
+}
