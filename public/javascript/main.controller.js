@@ -23,7 +23,6 @@ var mainApp = angular.module("mainApp", []);
 
         $scope.classes =[];
 
-        var currentGpa = 0;
         var totalCredits = 0;
         var totalGradePoint = 0;
 
@@ -80,6 +79,7 @@ var mainApp = angular.module("mainApp", []);
             totalCredits -= creditsToRemove;
             $scope.classes.splice(index,1);
         };
+
 
         //Returns the name of a class that is dependant upon the quality of GPA
         $scope.returnGpaColor = function(current){
