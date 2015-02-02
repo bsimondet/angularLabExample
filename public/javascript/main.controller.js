@@ -65,7 +65,7 @@ var mainApp = angular.module("mainApp", []);
             } else if (str === "C") {
                 return 2.0;
             } else if (str === "D") {
-                return 1.00;
+                return 1.0;
             } else {
                 return 0;
             }
